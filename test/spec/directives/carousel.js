@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: teaser', function () {
+describe('Directive: carousel', function () {
 
   // load the directive's module
   beforeEach(module('directivesApp'));
@@ -13,8 +13,8 @@ describe('Directive: teaser', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<teaser></teaser>');
+    element = angular.element('<carousel></carousel>');
     element = $compile(element)(scope);
-    // expect(element.text()).toBe('this is the teaser directive');
+    expect(element.text()).toBe('this is the carousel directive');
   }));
 });

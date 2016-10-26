@@ -14,19 +14,17 @@ angular.module('directivesApp')
     return {
       templateUrl: function( ) {
         //console.log( attr );
-        return 'scripts/directives/teaser.html';
+        return 'views/directives/teaser.html';
       },
       restrict: 'E',
+			replace: true,
       transclude: true,
       scope: {},
       //compile: teaserCompile,
       // adding content to the view
       link: function( scope, element, attrs, controller, transclusionFn ) {
-        console.log( element );
-        console.log( controller );
-        console.log(attrs);
         if( attrs.fontSize === 'extra-large' ) {
-          console.log('hero detected');
+          console.log( element );
           element.addClass('teaser--hero');
         }
         transclusionFn( scope, function( clone ) {
