@@ -6,7 +6,7 @@ module.exports = function( grunt ) {
 			tasks: ['wiredep']
 		},
 		js: {
-			files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
+			files: ['<%= grunt.appConfig.app %>/scripts/{,*/}*.js'],
 			tasks: ['newer:jshint:all'],
 			options: {
 				livereload: '<%= connect.options.livereload %>'
@@ -17,7 +17,7 @@ module.exports = function( grunt ) {
 			tasks: ['newer:jshint:test', 'karma']
 		},
 		styles: {
-			files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
+			files: ['<%= grunt.appConfig.app %>/styles/{,*/}*.css'],
 			tasks: ['newer:copy:styles', 'autoprefixer']
 		},
 		gruntfile: {
@@ -28,9 +28,9 @@ module.exports = function( grunt ) {
 				livereload: '<%= connect.options.livereload %>'
 			},
 			files: [
-				'<%= yeoman.app %>/{,*/}*.html',
+				'<%= grunt.appConfig.app %>/{,*/}*.html',
 				'.tmp/styles/{,*/}*.css',
-				'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+				'<%= grunt.appConfig.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
 			]
 		}
 	}
